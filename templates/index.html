@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD application</title>
+    
+    <!-- css and bootstrap -->
+    <link href="../bootstrap-5.3.1-dist/css/bootstrap.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../DataTables/DataTables-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
+    
+    <!-- symbols -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+<div class="container d-flex justify-content-center flex-column">
+    <div class="row d-flex justify-content-center " style="margin-top: 50px; margin-bottom: 50px;">
+        <div class="col-xl-4 shadow-lg rounded border border-5 border-end-0 border-bottom-0 border-start-0 border-warning">
+            
+            <!--form heading -->
+            <h2 class="text-center mt-3 mb-4">Responsive Registration Form</h2>
+            <form class="needs-validation form" id="form" name="registration">
+
+                <!-- fname -->
+                <div class="form-row align-items-center pb-3">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <svg class="input-group-text" xmlns="http://www.w3.org/2000/svg" height="2.5em" viewBox="0 0 448 512"><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/></svg>
+                        </div>
+                        <input type="text" class="fname form-control w-75"  name="fname" id="fname" placeholder="First Name" >
+                    </div>
+                </div>
+                
+                <!--lname -->
+                <div class="form-row align-items-center pb-3">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <svg class="input-group-text" xmlns="http://www.w3.org/2000/svg" height="2.5em" viewBox="0 0 448 512"><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/></svg>
+                        </div>
+                        <input type="text" class="form-control w-75"  name="lname" id="lname" placeholder="Last Name" >                 
+                    </div>
+                </div>
+
+                <!-- email -->
+                <div class="form-row align-items-center pb-3">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <svg class="input-group-text" xmlns="http://www.w3.org/2000/svg" height="2.5em" viewBox="0 0 512 512"><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/></svg>
+                        </div>
+                        <input type="email" class="form-control w-75"  name="email" id="email" placeholder="Email" aria-describedby="input-group-prepend" >                      
+                    </div>
+                </div>
+
+                <!-- Gender -->
+                <h6>Gender: </h6>
+                <div class="row pb-3 ps-3" id="gender">
+                    <div class=" form-check col-4">
+                        <input class="form-check-input " type="radio" name="Gender" id="male" value="male" >
+                        <label class="form-check-label"  for="male">Male</label>
+                    </div>
+                    <div class="form-check col-4" >
+                        <input class="form-check-input" type="radio" name="Gender" id="female" value="female" >
+                        <label class="form-check-label"  for="female">Female</label>
+                    </div>
+                </div>
+
+                <!-- Country -->
+                <div class="row pb-3 ps-3 pe-3">
+                    <select class=" form-select" id="country" name="Country" required >
+                        <option value="">Select a Country</option>
+                        <option value="Barat">Barat</option>
+                        <option value="USA">USA</option>
+                    </select>
+                </div>
+
+                <!-- Hobbies -->
+                <h6>Hobbies: </h6>
+                <div class="row pb-3 ps-3 " id="hobbies">
+                    <div class="col-3 form-check">
+                        <label class="form-check-label" for="cricket" required>cricket</label>
+                        <input class="form-check-input hobbies" type="checkbox" name="hobbies" value="cricket" id="cricket" >
+                    </div>
+                    <div class="col-3 form-check">
+                        <input class="form-check-input hobbies" type="checkbox" name="hobbies" value="football" id="football" >
+                        <label class="form-check-label " for="football" required>football</label>
+                    </div>
+                    <div class="col-3 form-check">
+                        <input class="form-check-input hobbies " type="checkbox" name="hobbies" value="dance" id="dance" >
+                        <label class="form-check-label" for="dance" required>dance</label>
+                    </div>
+                </div>
+                <div id="hobbies"></div>
+
+                <!-- submit btn -->
+                <div class="row pb-4 text-center">
+                    <div class="col ">
+                        <button class=" submit btn text-dark fw-bold" style="background-color: yellow;" type="button" id="submit" data-id="submit">submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- datatable -->
+<div class="container-fluid px-5 table-responsive">
+    <table id="table_id" class="table">
+        <thead>
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Gender</th>
+            <th>Country</th>
+            <th>Hobbies</th>
+            <th>buttons</th>
+          </tr>
+        </thead>
+      </table>
+</div>
+
+<script src="../javascript/jquery-3.7.0.min.js"></script><!--jquery script -->
+<script src="../bootstrap-5.3.1-dist/js/bootstrap.bundle.min.js"></script>  <!--bootstrap jquery script -->
+<script src="../javascript/jquery-validation-1.19.5/dist/jquery.validate.min.js"></script><!--jquery validation plugin -->
+<script src="../javascript/jquery-validation-1.19.5/dist/additional-methods.min.js"></script>
+<script src="../DataTables/DataTables-1.13.6/js/jquery.dataTables.min.js"></script><!--dataTables jquery -->
+<script src="../javascript/script.js"></script>
+
+</body>
+</html>
